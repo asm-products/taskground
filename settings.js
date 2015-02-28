@@ -42,12 +42,12 @@ var mandrillSettings = {
  */
 var developmentSettings = {
   'systemEmail': 'noreply@taskground.com',
-  'paypalUsername': '',
-  'paypalPassword': '',
-  'paypalSignature': '',
-  'paypalEnvironment': '',
-  'paypalReturnURL': 'http://192.168.33.10:3100/success',
-  'paypalCancelURL': 'http://192.168.33.10:3100',
+  'paypalUsername': 'username',
+  'paypalPassword': 'password',
+  'paypalSignature': 'signature',
+  'paypalEnvironment': 'environment',
+  'paypalReturnURL': 'http://192.168.1.10:3100/success',
+  'paypalCancelURL': 'http://192.168.1.10:3100',
   'plans': plans,
   'Mandrill': mandrillSettings
 };
@@ -57,9 +57,9 @@ var developmentSettings = {
  */
 var productionSettings = {
   'systemEmail': 'noreply@taskground.com',
-  'paypalUsername': '',
-  'paypalPassword': '',
-  'paypalSignature': '',
+  'paypalUsername': 'username',
+  'paypalPassword': 'password',
+  'paypalSignature': 'signature',
   'paypalEnvironment': 'production',
   'paypalReturnURL': 'http://taskground.com/success',
   'paypalCancelURL': 'http://taskground.com',

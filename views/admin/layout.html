@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ settings.appName }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon" sizes="152x152" href="/img/icon152.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/img/icon120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/img/icon76.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/img/icon60.png"> 
+        {% block css %}
+          {% if settings.appMode == 'production' %}
+            <link rel="stylesheet" href="/css/admin.min.css">
+          {% else %}
+            <link rel="stylesheet" href="/css/font-awesome.min.css">
+            <link rel="stylesheet" href="/css/admin.css">
+            <style type="text/css" media="screen">
+              #development {
+                background-color: #FA5C4F;
+                color: #fff;
+                font-weight: bold;
+                padding: .5em 0;
+                text-align: center;
+                font-size: 12px;
+              }
+            </style>
+          {% endif %}
+        {% endblock %}
+        {% if settings.appMode == 'production' %}
+          <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-634647-45', 'taskground.com');
+            ga('send', 'pageview');
+
+          </script>
+        {% endif %}
+    </head>
+    <body>
+      {% if settings.appMode == 'development' %}
+          <div id="development">DEVELOPMENT</div>
+      {% endif %}
+
+      {% block header %}
+      <div id="header-home" class="container">
+        <a href="/" id="logo"><span><strong>Task</strong>ground</span></a>
+
+        <div id="header-menu">
+            <a href='/logout'>Logout</a>
+        </div>
+      </div>
+      {% endblock %}
+
+      {% block content %}{% endblock %}
+
+      {% block page_footer %}
+      <footer>
+      </footer>
+      {% block footer_scripts %}
+      {% endblock %}
+      {% endblock %}
+    </body>
+</html>

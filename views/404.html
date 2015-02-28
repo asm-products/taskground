@@ -1,0 +1,16 @@
+{% extends 'layout_home.html' %}
+
+{% block pagetitle %} 404 Page not found {% endblock %}
+
+{% block header %}
+  <div id="header" class="center">
+    <a href="/" id="logo" alt="Taskground"><img src="/img/logo.png"> <span>{{ settings.appName }}</span></a>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div id="not-found">404 - Page Not Found</div>
+{% endblock %}
+
+{% block page_footer %}
+{% endblock %}

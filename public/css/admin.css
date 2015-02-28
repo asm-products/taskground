@@ -1,0 +1,260 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+  margin-bottom: 3em;
+}
+ol, ul {
+  list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+blockquote, q {
+  quotes: "" "";
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+a:hover {
+  color: #5972BC;
+}
+#logo {
+  color: #111;
+  font-weight: bold;
+  display: inline-block;
+}
+#logo img, #logo span {
+  vertical-align: middle;
+}
+#logo span {
+  font-style: normal;
+  font-weight: normal;
+  color: #2ECC71;
+}
+#logo strong {
+  color: #000;
+  font-weight: bold;
+}
+#header-home {
+  background-color: #fff;
+  padding: 0.5em 1.5em;
+}
+#header-home #logo {
+  display: block;
+  font-weight: bold;
+  text-align: left;
+  float: left;
+  line-height: 80px;
+  font-size: 1.125em;
+  width: auto;
+  color: #333;
+  text-decoration: none;
+}
+#header-menu {
+  float: right;
+  width: auto;
+  line-height: 80px;
+  text-align: right;
+  vertical-align: middle;
+}
+#header-menu a {
+  color: #333;
+  text-decoration: none;
+  padding: 0.2em 1em;
+  border-radius: 3px;
+  display: inline-block;
+}
+#header-menu a:hover {
+  color: #000;
+}
+#header-menu a:last-child {
+  margin-right: 0;
+}
+#header-home:after {
+  display: block;
+  content: " ";
+  clear: both;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+table {
+  width: 100%;
+}
+td, th {
+  padding: 1em .5em;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  border-top: 1px solid #ddd;
+}
+tr:nth-child(odd) td {
+  background-color: #f8f8f8;
+}
+.subscription {
+  background-color: #f8f8f8;
+  padding: 1em;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: 1.5em;
+}
+.date {
+  font-size: .8em;
+  color: #888;
+  font-style: italic;
+  margin-left: .5em;
+}
+.type {
+  padding: .2em .5em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin-left: .5em;
+  font-size: .8em;
+}
+.mini, .mobile {
+  background-color: #3BA4CD;
+  color: #fff;
+}
+.admin {
+  background-color: #905799;
+  color: #fff;
+}
+.operator {
+  background-color: #5972BC;
+  color: #fff;
+}
+.done {
+  background-color: #2ECC71;
+  color: #fff;
+}
+.todo {
+  background-color: #BA4A48;
+  color: #fff;
+}
+
+label {
+  display: block;
+  line-height: 1.5em;
+  font-size: 1.2em;
+  color: #555;
+}
+form {
+  width: auto;
+  padding: 0 1em;
+  box-sizing: border-box;
+}
+form p {
+  margin-bottom: 1.5em;
+  color: #555;
+}
+#login-form {
+  width: 500px;
+  margin: 1.5em auto;
+}
+input[type=text], input[type=password], input[type=email] {
+  width: 100%;
+  margin-bottom: 1.5em;
+  border: 1px solid #ddd;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  box-sizing: border-box;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+input[type=submit], .btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 0;
+  background-color: #2ECC71;
+  color: #fff;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1em;
+}
+.error-msg {
+  color: #a00;
+}
+.company-info {
+  background-color: #444;
+  color: #eee;
+  padding: 1em;
+}
+.options {
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: right;
+  float: right;
+}
+.options a {
+  font-size: .8em;
+  color: #888;
+  font-weight: normal;
+}
+.block {
+  margin: 1.5em 0;
+  padding: 1em;
+  background-color: #2ECC71;
+  color: #fff;
+}
+.block:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+.block p {
+  width: 33%;
+  float: left;
+  text-align: center;
+}
+.block p span {
+  display: block;
+  font-size: 3em;
+}

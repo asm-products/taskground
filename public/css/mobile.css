@@ -1,0 +1,459 @@
+@-webkit-keyframes blink-animation {
+  0% { color: #f8f8f8; }
+  100% { color: #888; }
+}
+@-moz-keyframes blink-animation {
+  0% { color: #f8f8f8; }
+  100% { color: #888; }
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, a, address,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+html, body {
+  height: 100%;
+}
+:focus {
+  outline: 0;
+}
+body {
+  line-height: 1;
+  color: #34383D;
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+ol, ul {
+  list-style: none;
+}
+textarea {
+  display: block;
+  width: 100%;
+  margin: 1em auto;
+  border: 1px solid #999;
+  padding: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 280px;
+  font-family: inherit;
+  font-size: 1em;
+}
+#header {
+  background-color: #fff;
+  color: white;
+  z-index: 2;
+  height: 79px;
+  padding: 0 1em;
+}
+#header:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+#header #logo {
+  display: block;
+  font-weight: bold;
+  text-align: left;
+  float: left;
+  line-height: 80px;
+  font-size: 18px;
+  width: auto;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+#logo img, #logo span {
+  vertical-align: middle;
+}
+#logo span {
+	font-style: normal;
+	font-weight: normal;
+	color: #2ECC71;
+}
+#logo strong {
+	color: #000;
+	font-weight: bold;
+}
+
+#header-menu {
+  float: right;
+  width: auto;
+  line-height: 80px;
+  text-align: right;
+  vertical-align: middle;
+}
+#header-menu a {
+  color: #000;
+  text-decoration: none;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+header:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+#settings-button {
+  margin-right: 3em;
+  background-color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}
+label {
+  display: block;
+  line-height: 1.5em;
+  font-size: 1.2em;
+  color: #34383D;
+}
+form {
+  width: auto;
+  padding: 0 1em;
+  box-sizing: border-box;
+}
+form p {
+  margin-bottom: 1.5em;
+}
+input[type=text], input[type=password], input[type=email] {
+  width: 100%;
+  margin-bottom: 1.5em;
+  border: 1px solid #999;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 1.63em;
+  box-sizing: border-box;
+}
+input[type=submit], .btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  border: 0;
+  background-color: #2ECC71;
+  color: #fff;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.27em;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+h3 {
+  text-align: center;
+  padding: 0.5em 0;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+  background-color: #f8f8f8;
+  color: #aaa;
+}
+.mobile-controls {
+  text-align: center;
+  background-color: #f8f8f8;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.mobile-controls button {
+  color: #404040;
+  text-decoration: none;
+  width: 80px;
+  height: 100%;
+  display: inline-block;
+  margin-right: 1.5em;
+  padding: 0.5em 1em;
+  border: none;
+  background-color: transparent;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+.mobile-controls button:last-child  {
+  margin-right: 0;
+}
+.mobile-controls button i {
+  display: block;
+  padding-bottom: 0.2em;
+  font-size: 1.5em;
+}
+.mobile-controls button:hover, .mobile-controls .active {
+	color: rgb(56, 139, 209);
+}
+#details-subcontrols {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  background-color: #fff;
+  z-index: 11;
+  text-align: center;
+  padding: 1em 0;
+  display: none;
+}
+#details-subcontrols button {
+  border: none;
+  background-color: transparent;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  margin: .5em 0;
+  display: inline-block;
+  background-color: #2ECC71;
+  padding: 1em 1.5em;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  width: 80%;
+}
+#details-subcontrols button#pending {
+  background-color: #FE7969;
+}
+#details-subcontrols button#map-button {
+  background-color: #3BA4CD;
+}
+#details-subcontrols button#subcontrols-cancel {
+  background-color: #aeaeae;
+}
+.active {
+  background-color: #222;
+}
+.task {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #f0f0f0;
+  border-top: 1px solid #fff;
+  padding: 1.5em 1em;
+  cursor: pointer;
+  line-height: 1.5em;
+}
+.task:first-child {
+  border-top: 0px;
+}
+.task:hover {
+  background-color: #f0f0f0;
+}
+.task-title {
+  font-size: 1.2em;
+}
+.task-time {
+  color: #aeaeae;
+}
+.task-done p {
+  text-decoration: line-through;
+}
+.task-pending p {
+  color: #aeaeae;
+}
+.task-pending p:nth-child(2):after {
+  font-family:'FontAwesome';
+  content:"\f017";
+  margin-left: .5em;
+	color: #d0b304;
+}
+.btn-cancel {
+  border: 0;
+  color: #fff;
+  background-color: #BA4A48;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.27em;
+  text-decoration: none;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+.empty-msg {
+  color: #999;
+  padding: 1em;
+  display: block;
+}
+#map {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1.5em;
+  background-color: rgb(179, 209, 255);
+}
+#pending-block {
+  display: none;
+  padding-top: 1.5em;
+}
+#settings-block {
+  display: none;
+  padding-top: 1.5em;
+}
+#main-block {
+  padding-bottom: 8em;
+}
+#details-block {
+  width: 100%;
+  margin: 0 auto 140px auto;
+  display: none;
+  padding-top: 1.5em;
+  padding-bottom: 8em;
+}
+#map-block {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+#details, #task-name, #task-info, #pending-messages {
+  line-height: 1.5em;
+  padding: 0 1.5em;
+}
+.pending-msg {
+  margin-top: 1.5em;
+  padding: 1em !important;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+	background-color: #fffef6;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.pending-msg span {
+  display: block;
+  font-weight: bold;
+	color: #d0b304;
+}
+.pending-msg span:before {
+  font-family:FontAwesome;
+  content:"\f017";
+  font-style: normal;
+  margin-right: .5em;
+	color: #d0b304;
+}
+#task-info {
+  color: #ccc;
+  margin-bottom: 1.5em;
+}
+#status {
+  line-height: 1.5em;
+}
+#status.done {
+	display: block;
+  font-weight: normal;
+  color: #2ECC71;
+  font-family:'FontAwesome';
+	padding-left: 1.5em
+}
+#status.done:before {
+  content:"\f00c";
+  margin-right: 0.3em;
+}
+#task-name {
+  line-height: 1.5em;
+  font-weight: bold;
+}
+.btn {
+  text-decoration: none;
+  background-color: rgb(127, 194, 66);
+  color: #fff;
+  padding: 5px;
+}
+.error-msg {
+  color: #a00;
+}
+#back {
+  cursor: pointer;
+}
+#settings-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+#loading-cover {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  font-size: 2em;
+  background-color: #fff;
+  text-align: center;
+}
+#mobile-menu-button {
+  display: none;
+}
+.hidden {
+  display: none;
+}
+
+/*******************/
+/***** SPINNER *****/
+/*******************/
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin: 10em auto 1.5em auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #4FBA95;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: bounce 2.0s infinite ease-in-out;
+  animation: bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: scale(0.0) }
+  50% { transform: scale(1.0) }
+}
+
+/*************************/
+/***** MEDIA QUERIES *****/
+/*************************/
+
+@media (max-width: 768px) {
+  #header-menu a span, #header-menu button span {
+    display: none;
+  }
+  #header-menu a, #header-menu button {
+    font-size: 1.5em;
+  }
+  #settings-button {
+    margin-right: 1em;
+  }
+  .spinner {
+    margin-top: 3em;
+  }
+	.task:hover {
+	  background-color: #f8f8f8;
+	}
+}

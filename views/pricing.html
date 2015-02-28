@@ -1,0 +1,49 @@
+{% extends 'layout_home.html' %}
+
+{% block pagetitle %} Pricing {% endblock %}
+
+{% block content %}
+<div id="main-content" class="content">
+    <div class="clearfix">
+        <ul class="box pricing">
+          <li>Mini</li>
+          <li>Free</li>
+          <li>{{ plans.mini.members }} member team</li>
+          <li>Unlimited tasks</li>
+          <li><a href="/signup" class="btn">Signup</a></li>
+        </ul>
+        <ul class="box pricing">
+          <li>Small</li>
+          <li>USD ${{ plans.small.amount }}/month</li>
+          <li>{{ plans.small.members }} member team</li>
+          <li>Unlimited tasks</li>
+          <li><a href="/subscribe/small" class="btn">Signup</a></li>
+        </ul>
+        <ul class="box pricing">
+          <li>Regular</li>
+          <li>USD ${{ plans.regular.amount }}/month</li>
+          <li>{{ plans.regular.members }} member team</li>
+          <li>Unlimited tasks</li>
+          <li><a href="/subscribe/regular" class="btn">Signup</a></li>
+        </ul>
+    </div>
+    <div class="clearfix">
+      <div class="box">
+        <h3>What payment methods are accepted?</h3>
+        <p>We support Paypal subscriptions only, if you'd rather pay using a different method please let us know, we may be able to add it in the future.</p>
+        <h3>Do I need a Paypal account to use the free plan?</h3>
+        <p>Paypal is only needed for our paid plans, the <i>Mini</i> plan is free and you can use it without a Paypal account.</p>
+    </div>
+
+    <div class="box">
+      <h3>Is there any minimum commitment?</h3>
+      <p>There isn't any minimum commitment, you stay as long as you need. We'll be sad to see you go but you can  cancel the plan when you don't need us anymore.</p>
+      <h3>We need a plan for a larger team, can you provide it?</h3>
+      <p>In case you want to use our service for larger teams please get in touch with us.</p>
+  </div>
+  </div>
+
+</div>
+
+{% endblock %}
+

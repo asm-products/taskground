@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+
+  <div class="block">
+    <p><span>{{ users }}</span> users </p>
+    <p><span>{{ tasks }}</span> tasks</p>
+    <p><span>{{ subscriptions.length }}</span> subscriptions</p>
+  </div>
+
+  <table>
+    <tr>
+      <th>Company</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+{% for subscription in subscriptions %}
+    <tr>
+      <td>
+        {{ subscription.company }}
+        <span class="type {{ subscription.type }}">{{ subscription.type }}</span></td>
+      <td class="date">{{ subscription.timestamp|date('jS \o\f F') }}</td>
+      <td><a href="/subscription/users/{{ subscription._id.toString() }}"><i class="fa fa-users"></i></a></td>
+      <td><a href="/subscription/tasks/{{ subscription._id.toString() }}"><i class="fa fa-map-marker"></i></a></td>
+    </tr>
+{% endfor %}
+</table>
+</div>
+{% endblock %}

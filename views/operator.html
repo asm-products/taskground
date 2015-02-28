@@ -1,0 +1,294 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+  {% if settings.appMode == 'production' %}
+    <link rel="stylesheet" href="/css/operator.min.css">
+  {% else %}
+    <link rel="stylesheet" href="/css/operator.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+  {% endif %}
+{% endblock %}
+
+{% block header_options %}
+<div id="header-menu">
+  <a href="#" id="tasks-button"><i class="fa fa-globe"></i> Tasks</a>
+  <a href="#" id="users-button"><i class="fa fa-group"></i> Team</a>
+  <a href="#" id="settings-button"><i class="fa fa-gear"></i> Settings</a>
+  <a href="/logout" id="logout"><i class="fa fa-power-off"></i>  Logout</a>
+</div>
+{% endblock %}
+
+{% block content %}
+  <div id="loading-cover">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+  </div>
+
+     <div id="controls">
+
+        <!-- tasks -->
+          <div id="tasks-block" class="panel">
+            <div class="block-title"><h3>Tasks</h3></div>
+            <div id="tasks-index-map-container"> <div id="map"></div> </div>
+            <div class="block-controls">
+              <div class="container">
+                <button id="add-task-button" data-empty="You must add mobile members to your team before adding tasks"><i class="fa fa-plus"></i> New</button>
+                <button id="todo"><i class="fa fa-circle-o"></i> To do</button>
+                <button id="done"><i class="fa fa-check-circle-o"></i> Done</button>
+              </div>
+            </div>
+
+            <div class="container">
+              <div id="tasks-container" data-empty="There aren't tasks."></div>
+            </div>
+          </div>
+
+          <div id="task-view-block" class="panel">
+            <div class="block-title"><h3>Task View</h3></div>
+            <div id="tasks-view-map-container"></div>
+            <div class="block-controls">
+              <div class="container">
+                <button id="task-view-cancel"><i class="fa fa-arrow-left"></i> Back</button>
+                <button id="task-view-edit"><i class="fa fa-pencil"></i> Edit</button>
+                <button id="task-view-delete"><i class="fa fa-trash-o"></i> Delete</button>
+              </div>
+            </div>
+
+            <div class="container">
+              <div id="task-view"></div>
+            </div>
+          </div>
+
+          <div id="add-task-block" class="panel">
+            <div class="block-title" data-add="Add Task" data-edit="Edit Task"><h3>Add Task</h3></div>
+            <div id="tasks-edit-map-container"></div>
+            <div class="form">
+            <div class="container">
+              <form action="#" method="post" id="add-task-form">
+                <input type="hidden" name="lat" value="" id="lat">
+                <input type="hidden" name="lng" value="" id="lng">
+                <input type="hidden" name="id" value="" id="task-id">
+
+                <label for="address">Address</label>
+                <div id="address-field">
+                <input type="text" name="address" value="" id="address">
+                <button id="find-address"><i class="fa fa-search"></i></button>
+                </div>
+                <p id="location-error" class="error-msg hidden"></p>
+                
+
+                <label for="description">Description</label>
+                <textarea name="description" id="description"></textarea>
+                <p id="description-error" class="error-msg hidden"></p>
+
+                <label>Date</label>
+                <div id="datepicker"></div>
+
+                <div id="time">
+                    <div id="time-hours">
+                <label for="hours">Hours</label>
+                <select name="hours" id="hours">
+                    <option value="00">00</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                </select>
+                </div>
+                <div id="time-minutes">
+                <label for="minutes">Minutes</label>
+                <select name="minutes" id="minutes">
+                    <option value="00">00</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                    <option value="50">50</option>
+                </select>
+                </div>
+                </div>
+                
+                <label for="users-select">Assign to</label>
+                <select name="users-select" id="users-select">
+                </select>
+                <p id="task-user-error" class="error-msg hidden"></p>
+
+                <input type="submit" value="Submit">
+                <button id="add-task-cancel" class="btn-cancel">Cancel</button>
+              </form>
+            </div>
+            </div>
+          </div>
+
+        <!-- end tasks -->
+
+        <!-- users block -->
+        <div id="users-block" class="panel">
+          <div class="block-title"><h3>Team</h3></div>
+          <div class="block-controls">
+            <div class="container">
+              <button id="add-user-button"><i class="fa fa-plus"></i>  New</button>
+              <div id="max-users-limit"><i class="fa fa-exclamation-circle"></i> You reached your account's max users limit.</div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div id="users-container" data-empty="There aren't members in this team."></div>
+          </div>
+        </div>
+
+        <div id="user-view-block" class="panel">
+          <div class="block-title"><h3>User View</h3></div>
+          <div class="block-controls">
+            <div class="container">
+              <button id="user-view-cancel"><i class="fa fa-arrow-left"></i> Back</button>
+              <button id="user-view-edit"><i class="fa fa-pencil"></i> Edit</button>
+              <button id="user-view-delete"><i class="fa fa-trash-o"></i> Delete</button>
+            </div>
+          </div>
+
+          <div class="container">
+            <div id="user-view"></div>
+          </div>
+        </div>
+
+        <div id="add-user-block" class="panel">
+          <div class="block-title"><h3>Add User</h3></div>
+          <div class="form">
+            <div class="container">
+              <form action="#" method="post" id="add-user-form">
+                <input type="hidden" name="id" value="" id="id">
+                <label for="name">Name</label>
+                <input type="text" name="name" value="" id="name">
+                <p id="name-error" class="error-msg hidden"></p>
+
+                <label for="email">Email</label>
+                <input type="text" name="email" value="" id="email">
+                <p id="email-error" class="error-msg hidden"></p>
+
+                <label for="password">Password</label>
+                <input type="password" name="password" value="" id="password">
+                <p id="password-error" class="error-msg hidden"></p>
+
+                <div id="user-type-block">
+                <label for="type">Type</label>
+                <select name="type" id="type">
+                  <option value="mobile">Mobile</option>
+                  <option value="operator">Operator</option>
+                  <option value="admin">Admin</option>
+                </select>
+                </div>
+                <input type="submit" value="Submit">
+                <button id="add-user-cancel" class="btn-cancel">Cancel</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- end users -->
+
+        <div id="settings-block" class="panel">
+          <div class="block-title"><h3>Settings</h3></div>
+          <div class="form">
+            <div class="container">
+              <form action="#" method="post" id="settings-form">
+                <fieldset>
+                  <legend>User Settings</legend>
+                  <label for="name">Name</label>
+                  <input type="text" name="name" value="" id="userName">
+                  <p id="user-name-error" class="error-msg hidden"></p>
+
+                  <label for="email">Email</label>
+                  <input type="email" name="email" value="" id="userEmail">
+                  <p id="user-email-error" class="error-msg hidden"></p>
+
+                  <label for="password">Password</label>
+                  <input type="password" name="password" value="" id="userPassword">
+                </fieldset>
+
+                <fieldset>
+                  <legend>Location</legend>
+                  <label for="country">Country</label>
+                  <input type="text" name="country" value="" id="country">
+
+                  <label for="city">City</label>
+                  <input type="text" name="city" value="" id="city">
+                </fieldset>
+
+                <input type="submit" value="Submit">
+                <button id="settings-cancel" class="btn-cancel">Cancel</button>
+              </form>
+            </div>
+          </div>
+        </div>
+{% endblock %}
+
+{% block footer_scripts %}
+<script id="task-index-template"  type="text/template">
+  <dl class="task<%classNames%>" id="<%this.id%>" data-id="<%this.index%>">
+    <dt class="task-title">
+        <span><%this.name%></span>
+        <p><%this.user%></p>
+    </dt>
+    <dd class="task-date"><%this.formated_date%><p><%this.time%></p></dd>
+  </dl>
+</script>
+
+<script id="task-view-template"  type="text/template">
+    <p class="task-title">
+    <%this.name%> 
+    <% if(this.status == 'done') { %><span class="<%this.status%>"><%this.status%> <%this.formated_done_date%></span><%}%>
+    </p>
+    <p class="task-info"> <%this.formated_date%> <%this.time%> - <%this.username%> </p>
+    <p class="task-description"> <%this.description.replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1<br>$2')%> </p>
+    <% if(this.pending) { %>
+    <% for(i=0;i<this.pending.length;i++) { %>
+        <p class="pending-msg">
+        <span><%this.pending[i].formated_date%> - <%this.pending[i].user%></span>
+        <%this.pending[i].message.replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1<br>$2')%>
+        </p>
+    <% }} %>
+</script>
+
+<script id="user-index-template"  type="text/template">
+  <dl class="user" id="<%this.id%>" data-id="<%this.index%>"><dt> <%this.name%> <p><%this.email%></p></dt> <dd><%this.type%></dd> </dl>
+</script>
+
+<script id="user-view-template"  type="text/template">
+    <p class="user-title"> <%this.name%> <span> <%this.type%> </span></p>
+    <p class="user-info"> <%this.email%></p>
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=&amp;sensor=false" type="text/javascript"></script>
+<script src="/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
+{% if settings.appMode == 'production' %}
+<script type="text/javascript" src="/js/operator.min.js"></script>
+{% else %}
+<script type="text/javascript" src="/js/common/jquery.js"></script>
+<script src="/js/common/jquery-ui.custom.min.js" type="text/javascript"></script>
+<script src="/js/common/template-engine.js" type="text/javascript"></script>
+<script type="text/javascript" src="/js/common/map.js"></script> 
+<script type="text/javascript" src="/js/operator/operator.js"></script>
+{% endif %}
+
+{% endblock %}

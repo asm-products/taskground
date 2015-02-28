@@ -1,0 +1,40 @@
+{% extends 'layout_home.html' %}
+
+{% block pagetitle %} Support {% endblock %}
+
+{% block content %}
+<div id="main-content" class="content support clearfix">
+  <ul class="support-index">
+    <li><a href="#what-is">About {{ settings.appName }}</a></li>
+    <li><a href="#signing-up">How to sign up</a></li>
+    <li><a href="#payment-methods">Payment methods</a></li>
+  </ul>
+
+  <div id="support-content">
+  <div>
+    <a name="what-is"></a>
+    <h2>What is {{ settings.appName }}?</h2>
+    <p>{{ settings.appName }} is is a web-based real-time workforce management tool for mobile teams.</p>
+    <p>It's been built to help improving the efficiency of companies and organizations whose members need to perform tasks on different locations.</p>
+  </div>
+
+  <div>
+    <a name="signing-up"></a>
+    <h2>How to signing up</h2>
+    <p>We're currently offering three different plans depending on the size of your team. Our Mini plan it's free for small teams.</p>
+    <p>For larger teams we provide <a href="/pricing">subscription based plans</a>. If none of our plans fits your needs dont hesitate to contact us, we can probably work something out for you.</p>
+  </div>
+  
+  <div>
+    <a name="payment-methods"></a>
+    <h2>Payment methods</h2>
+    <p>Our plans are subscription based, which means you pay a montlhy fee to use the service. We're currently accepting Paypal payments as only option.</p>
+    <p>By the way, we also offer a free plan which you can use for small teams.</p>
+  </div>
+
+  </div>
+</div>
+
+
+{% endblock %}
+

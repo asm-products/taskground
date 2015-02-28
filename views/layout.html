@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon" sizes="152x152" href="/img/icon152.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/img/icon120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/img/icon76.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/img/icon60.png">        
+        <title>{{ settings.appName }}</title>
+        {% block css %}
+          <link rel="stylesheet" href="/css/style.css">
+        {% endblock %}
+        {% if settings.appMode == 'production' %}
+          <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-634647-45', 'taskground.com');
+            ga('send', 'pageview');
+          </script>
+          {% else %}
+          <style type="text/css" media="screen">
+            #development {
+              background-color: #FA5C4F;
+              color: #fff;
+              font-weight: bold;
+              padding: .5em 0;
+              text-align: center;
+              font-family: helvetica, sans-serif;
+              font-size: 12px;
+            }
+          </style>
+        {% endif %}
+    </head>
+    <body>
+      {% if settings.appMode == 'development' %}
+          <div id="development"> DEVELOPMENT</div>
+      {% endif %}
+      {% block header %}
+        <div id="header">
+          <div class="container">
+            <div id="logo-block">
+              <a href="#" id="logo" alt="Taskground"><span><strong>Task</strong>ground</span></a>
+              <button id="mobile-menu-button"><i class="fa fa-bars"></i></button>
+            </div>
+          {% block header_options %}
+          {% endblock %}
+          </div>
+        </div>
+      {% endblock %}
+      {% block content %}{% endblock %}
+
+      {% block page_footer %}
+      {% endblock %}
+
+      {% block footer_scripts %}
+      {% endblock %}
+    </body>
+</html>

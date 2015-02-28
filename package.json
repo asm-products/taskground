@@ -1,0 +1,33 @@
+{
+  "name": "Taskground",
+  "version": "0.0.8",
+  "description": "Workforce management tool for mobile teams",
+  "main": "app.js",
+  "scripts": {
+    "start": "node taskground",
+    "test": "mocha test"
+  },
+  "dependencies": {
+    "socket.io": "latest",
+    "express": "~4.0.0",
+    "compression": "~1.0.0",
+    "mongodb": "1.2.8",
+    "swig": "1.*",
+    "bcrypt": "latest",
+    "nodemailer": "~1.2.0",
+    "validator": "2.0.0",
+    "cookie": "~0.1.0",
+    "cookie-parser": "~1.0.0",
+    "body-parser": "~1.0.0",
+    "cookie-session": "~1.0.0",
+    "paypal-recurring": "latest"
+  },
+  "devDependencies": {
+    "mocha": "~1.14.0",
+    "should": "~3.3.2",
+    "socket.io-client": "latest"
+  },
+  "author": "mnlg",
+  "private": true
+}
+

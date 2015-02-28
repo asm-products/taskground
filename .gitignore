@@ -1,0 +1,12 @@
+# vagrant
+.vagrant
+*.lock
+
+# OS X
+.DS_Store
+
+# NPM
+node_modules
+*.log
+
+development.lock

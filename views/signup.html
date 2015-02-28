@@ -1,0 +1,58 @@
+{% extends 'layout_home.html' %}
+
+{% block pagetitle %} Sign up {% endblock %}
+
+{% block header %}
+  <div id="header" class="center">
+    <a href="/" id="logo" alt="Taskground"><span><strong>Task</strong>ground</span></a>
+  </div>
+{% endblock %}
+
+{% block content %}
+  {% if payerID %}
+  <div id="subscription-block">
+    <h1>{{ plan.type}}</h1>
+    <p>{{ plan.description}}</p>
+  </div>
+  {% endif %}
+    <form action="" method="post" accept-charset="utf-8" id="login-form">
+      <label for="company">Company</label>
+      <input type="text" name="company" value="{{ values.company }}" id="company" autocomplete="off" autofocus="true">
+    {% if errors.company %}
+    <p class="error-msg">{{ errors.company.msg }}</p>
+    {% endif %}
+
+    <label for="name">Name</label>
+    <input type="text" name="name" value="{{ values.name }}" id="name" autocomplete="off">
+    {% if errors.name %}
+    <p class="error-msg">{{ errors.name.msg }}</p>
+    {% endif %}
+
+    <label for="email">Email</label>
+    <input type="email" name="email" value="{{ values.email }}" id="email" autocomplete="off">
+    {% if errors.email %}
+    <p class="error-msg">{{ errors.email.msg }}</p>
+    {% endif %}
+
+    <label for="password">Password</label>
+    <input type="password" name="password" value="{{ values.password }}" id="password">
+    {% if errors.password %}
+    <p class="error-msg">{{ errors.password.msg }}</p>
+    {% endif %}
+
+    {% if not payerID %}
+    <p>
+     Do you already have an account? <a href="/login">Login</a>.
+    </p>
+    {% endif %}
+    <p>
+      <input type="submit" value="Sign up">
+      {% if not payerID %}
+        <a href="/" class="btn btn-cancel">Cancel</a>
+      {% endif %}
+    </p>
+    </form>
+{% endblock %}
+
+{% block page_footer %}
+{% endblock %}

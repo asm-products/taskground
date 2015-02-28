@@ -1,0 +1,59 @@
+{% extends 'layout_home.html' %}
+
+{% block content %}
+<div id="cover">
+  <div id="cover-copy">
+    <h1><span>Manage your mobile team and improve your workforce efficiency</span></h1>
+    <p><a href="/pricing" id="signup-cover-btn">Sign Up Now</a></p>
+  </div>
+</div>
+<div id="main-content" class="content">
+    <div class="clearfix">
+        <div class="box">
+            <h2><i class="fa fa-users"></i>Manage your workforce</h2>
+            <p>Taskground is a workforce management tool for mobile teams. It helps your team keeping track of your tasks.</p>
+        </div><div class="box">
+            <h2><i class="fa fa-list"></i> Assign tasks</h2>
+            <p>Schedule tasks on the map and assign them to your team members. Your team members will always know what to do next.</p>
+        </div>
+      </div>
+      <div class="clearfix">
+        <div class="box">
+            <h2><i class="fa fa-cloud"></i> Web-based</h2>
+            <p>It works on web browsers, no need to install any app. Your tasks are available on all your devices.</p>
+        </div>
+        <div class="box">
+            <h2><i class="fa fa-clock-o"></i> Real-Time</h2>
+            <p>All tasks are synched in Real-Time and made available to your team members instantly.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="screenshot">
+      <div class="content clearfix">
+          <div class="box">
+            <img src="/img/desktop-screenshot.png">
+          </div>
+          <div class="box">
+            <h2>One website for all devices</h2>
+            <p>
+           With <i>HTML5</i> and <i>Responsive Web Design</i> we built a website that fits your devices, be it desktop, laptop or mobile.</p>
+           <p>Team managers get a full featured management site when using a browser in a desktop or laptop computer, your mobile team members get a simplified site, which is <i>super-easy</i> to use and provides just the information they need in order to achieve their tasks.
+           </p>
+          </div>
+      </div>
+    </div>
+
+{% include "mailing.html" %}
+<script>
+var show = function() {
+    var d = document.getElementById("cover-copy");
+    d.className = d.className + " ready";
+};
+
+var img = new Image();
+img.onload = show;
+img.src = '/img/cover.jpg';
+</script>
+
+{% endblock %}

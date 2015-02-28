@@ -1,0 +1,28 @@
+{% extends 'layout_home.html' %}
+
+{% block pagetitle %} Password recovery {% endblock %}
+
+{% block header %}
+<div id="header" class="center">
+  <a href="/" id="logo" alt="Taskground"><span><strong>Task</strong>ground</span></a>
+</div>
+{% endblock %}
+
+{% block content %}
+  {% if message %}
+  <p class="center">{{ message }}</p>
+  {% else %}
+    <h1>Password Recovery</h1>
+    <form action="" method="post" accept-charset="utf-8" id="login-form">
+    <label for="email">Email</label>
+    <input type="email" name="email" value="" id="email" autocomplete="off" autofocus="true">
+    <p>
+      <input type="submit" value="Submit">
+      <a href="/" class="btn btn-cancel">Cancel</a>
+    </p>
+    </form>
+  {% endif %}
+{% endblock %}
+
+{% block page_footer %}
+{% endblock %}

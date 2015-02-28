@@ -1,0 +1,35 @@
+{% extends 'layout_home.html' %}
+
+{% block pagetitle %} Login {% endblock %}
+
+{% block header %}
+  <div id="header" class="center">
+    <a href="/" id="logo" alt="Taskground"><span><strong>Task</strong>ground</span></a>
+  </div>
+{% endblock %}
+
+{% block content %}
+    <form action="" method="post" accept-charset="utf-8" id="login-form">
+    <label for="email">Email</label>
+    <input type="email" name="email" value="{{ values.email }}" id="email" autocomplete="off" autofocus="true">
+
+    <label for="password">Password</label>
+    <input type="password" name="password" value="{{ values.password }}" id="password">
+    {% if errors.login %}
+    <p class="error-msg">{{ errors.login.msg }}</p>
+    {% endif %}
+    <p>
+      <a href="/recovery">forgot your password?</a>
+    </p>
+    <p>
+      Don't you have an account? <a href="/pricing">Sign up</a> now.
+    </p>
+    <p>
+      <input type="submit" value="Login">
+      <a href="/" class="btn btn-cancel">Cancel</a>
+    </p>
+    </form>
+{% endblock %}
+
+{% block page_footer %}
+{% endblock %}

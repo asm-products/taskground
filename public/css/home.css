@@ -340,6 +340,10 @@ textarea {
   background-color: #999;
   color: #fff;
 }
+.btn-disabled {
+  background-color: #999;
+  margin: 0;
+}
 .error-msg {
   color: #a00;
 }

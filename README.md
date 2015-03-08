@@ -157,10 +157,10 @@ The application will run in development mode if the `development.lock` file exis
 
 * [VirtualBox](https://www.virtualbox.org)
 * [Vagrant](http://www.vagrantup.com)
-* [BitBucket](https://bitbucket.org)
 * [NodeJs](http://nodejs.org)
 * [MongoDB](http://www.mongodb.org)
 * [Express](http://expressjs.com)
 * [Swig](http://paularmstrong.github.io/swig/)
 * [Socket.io](http://socket.io)
 * [Mocha](http://visionmedia.github.io/mocha/)
+* [Heroku](https://heroku.com)

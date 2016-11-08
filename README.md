@@ -1,16 +1,14 @@
-# Taskground
+![Taskground](http://i.imgur.com/5fg9IrX.jpg)
 
-<a href="https://assembly.com/taskground/bounties?utm_campaign=assemblage&utm_source=taskground&utm_medium=repo_badge"><img src="https://asm-badger.herokuapp.com/taskground/badges/tasks.svg" height="24px" alt="Open Tasks" /></a>
+# Taskground
 
 ## Workforce management tool for mobile teams
 
-This is a product being built by the Assembly community. You can help push this idea forward by visiting [https://assembly.com/taskground](https://assembly.com/taskground).
+Taskground is a workforce management tool for mobile teams. It helps your team schedule tasks on a map and assign them to your team members.
 
-### How Assembly Works
+All tasks are synched in Real-Time and made available to your team members instantly via websockets.
 
-Assembly products are like open-source and made with contributions from the community. Assembly handles the boring stuff like hosting, support, financing, legal, etc. Once the product launches we collect the revenue and split the profits amongst the contributors.
-
-Visit [https://assembly.com](https://assembly.com) to learn more.
+![Screenshot](http://i.imgur.com/1JVWZ5L.png)
 
 ## Development
 

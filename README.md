@@ -160,5 +160,5 @@ The application will run in development mode if the `development.lock` file exis
 * [Express](http://expressjs.com)
 * [Swig](http://paularmstrong.github.io/swig/)
 * [Socket.io](http://socket.io)
-* [Mocha](http://visionmedia.github.io/mocha/)
+* [Mocha](http://mochajs.org/)
 * [Heroku](https://heroku.com)
